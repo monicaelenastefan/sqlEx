@@ -1,11 +1,7 @@
 
---STEP1 CREATE DB
-
 --CREATE DATABASE shopDB;
 
-
---STEP2 CREATE TABLE , INSERT DATA AND UPDATE DATA
-/*
+BEGIN TRANSACTION
     CREATE TABLE inventory(
         id int not null identity(1,1) primary key,
         item_name varchar(100) not null,
@@ -97,16 +93,12 @@
     UPDATE magazines
     SET type = 'fun'
     WHERE id=1;
-*/
 
 
-/*
+
+
 DELETE from accessories where id=1 and color = 'turcoiz';
 DELETE from clothes where id=1;
 DELETE from magazines where id=3;
-*/
 
-
-
---drop table clothes;
---drop table items;
+COMMIT TRANSACTION
